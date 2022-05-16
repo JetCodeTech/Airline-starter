@@ -51,6 +51,13 @@
           "destination": "chennai",
           "date": "2022-05-04",
           "seat": 1
+        },
+        {
+          "name": "Magesh",
+          "source": "malasiya",
+          "destination": "chennai",
+          "date": "2022-05-04",
+          "seat": 1
         }
       ]
     },
@@ -81,7 +88,7 @@
       "endTime": "16:15",
       "numberOfSeats": 14,
       "ticketCost": "2600",
-      "booked": 12,
+      "booked": 11,
       "id": 11
     },
     {
