@@ -34,6 +34,13 @@
       "fName": "abcd",
       "lName": "abcd",
       "id": 5
+    },
+    {
+      "email": "a122@gmail.com",
+      "password": "a122",
+      "fName": "a122",
+      "lName": "a122",
+      "id": 6
     }
   ]
 }
