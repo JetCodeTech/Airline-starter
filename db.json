@@ -36,5 +36,81 @@
       "contact": "3456",
       "id": 3
     }
+  ],
+  "schedule": [
+    {
+      "source": "aa",
+      "destination": "aa",
+      "flightDate": "aa",
+      "startTime": "aa",
+      "endTime": "aa",
+      "numberOfSeats": "aa",
+      "ticketCost": "aa",
+      "id": 1
+    },
+    {
+      "source": "aa",
+      "destination": "aa",
+      "flightDate": "aa",
+      "startTime": "aa",
+      "endTime": "aa",
+      "numberOfSeats": "aa",
+      "ticketCost": "aa",
+      "id": 2
+    },
+    {
+      "source": "aa",
+      "destination": "aa",
+      "flightDate": "aa",
+      "startTime": "aa",
+      "endTime": "aa",
+      "numberOfSeats": "aa",
+      "ticketCost": "aa",
+      "id": 3
+    },
+    {
+      "source": "aa",
+      "destination": "bb",
+      "flightDate": "bb",
+      "startTime": "bb",
+      "endTime": "bb",
+      "numberOfSeats": "12",
+      "ticketCost": "bbb",
+      "booked": "12",
+      "id": 5
+    },
+    {
+      "source": "aa",
+      "destination": "aa",
+      "flightDate": "aa",
+      "startTime": "aa",
+      "endTime": "aa",
+      "numberOfSeats": "77",
+      "ticketCost": "aa",
+      "booked": "77",
+      "id": 6
+    },
+    {
+      "source": "aa",
+      "destination": "aa",
+      "flightDate": "cc",
+      "startTime": "cc",
+      "endTime": "cc",
+      "numberOfSeats": 34,
+      "ticketCost": "cc",
+      "booked": 34,
+      "id": 7
+    },
+    {
+      "source": "",
+      "destination": "",
+      "flightDate": "",
+      "startTime": "",
+      "endTime": "",
+      "numberOfSeats": 1,
+      "ticketCost": "",
+      "booked": 1,
+      "id": 8
+    }
   ]
 }

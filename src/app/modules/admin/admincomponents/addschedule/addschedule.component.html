@@ -3,14 +3,6 @@
     <mat-grid-tile>
         <mat-card class="card">
             <form class="example-form" [formGroup]="addscheduleForm">
-                <!-- <div *ngIf="!!airline && !!airline.name">
-                    <td>Airline Name:</td>
-                    <td>{{airline.name}}</td>
-                </div>
-                <div *ngIf="!!airline && !!airline.id">
-                    <td>Airline ID:</td>
-                    <td>{{airline.id}}</td>
-                </div> -->
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Source:</mat-label>
                     <input matInput placeholder="Source" formControlName="source">
@@ -37,8 +29,8 @@
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>Number of seats </mat-label>
-                    <input matInput placeholder="Number of seats" formControlName="numberOfSeats">
+                    <mat-label>Number of seats</mat-label>
+                    <input matInput type="number" placeholder="Number of seats" formControlName="numberOfSeats">
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -46,8 +38,10 @@
                     <input matInput placeholder="Ticket cost" formControlName="ticketCost">
                 </mat-form-field>
 
-                <button mat-raised-button class="example-full-width" color="primary" (click)="addSchedule()" >Add schedule</button>
-                <a routerLink="/admin/schedule" ><button mat-raised-button class="example-full-width" color="warn"  >Cancel</button></a>
+                <a><button mat-raised-button class="example-full-width" color="primary" (click)="addSchedule()">Add
+                    schedule</button></a>
+                <a routerLink="/admin/schedule"><button mat-raised-button class="example-full-width"
+                        color="warn">Cancel</button></a>
             </form>
         </mat-card>
     </mat-grid-tile>
