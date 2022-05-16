@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { HttpClient } from '@angular/common/http';
-
+import { toast, TYPE } from '../../../../utils/utils'
 @Component({
   selector: 'app-addflight',
   templateUrl: './addflight.component.html',
@@ -11,9 +11,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddflightComponent implements OnInit {
 
-  addflightForm:FormGroup;
+  addflightForm: FormGroup;
 
-  constructor(private adminService:AdminService,private router: Router,private http:HttpClient) {
+  constructor(private adminService: AdminService, private router: Router, private http: HttpClient) {
     this.addflightForm = new FormGroup({
       name: new FormControl("", [
         Validators.required,
@@ -46,12 +46,13 @@ export class AddflightComponent implements OnInit {
   //   })
   // }
 
-  addAirline()
-  {
+  addAirline() {
     let addflight = this.addflightForm.value
-    
-    this.http.post(" http://localhost:3000/addFlight",addflight).subscribe((res)=>{
-      console.log(res,"addflight1")
+
+    this.http.post(" http://localhost:3000/addFlight", addflight).subscribe((res) => {
+      if (res) {
+        toast(TYPE.SUCCESS, false, 'Flight Saved Successfully')
+      }
     })
     this.addflightForm.reset();
   }
