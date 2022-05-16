@@ -1,46 +1,28 @@
 {
   "register": [
     {
-      "email": "aa@gmail.com",
-      "password": "aaaaaaa",
-      "fName": "aaaaa",
-      "lName": "aaaaa",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "fName": "admin",
+      "lName": "1",
+      "role": 1,
       "id": 1
     },
     {
-      "email": "aaa@gmail.com",
-      "password": "aaaaa",
-      "fName": "aaaaa",
-      "lName": "aaaaa",
+      "email": "user@gmail.com",
+      "password": "user",
+      "fName": "user ",
+      "lName": "one",
+      "role": 2,
       "id": 2
     },
     {
-      "email": "abc@gmail.com",
-      "password": "abc",
-      "fName": "abc",
-      "lName": "abc",
+      "email": "admin2@gmail.com",
+      "password": "admin",
+      "fName": "admin ",
+      "lName": "2",
+      "role": 1,
       "id": 3
-    },
-    {
-      "email": "ab@gmail.com",
-      "password": "ab",
-      "fName": "ab",
-      "lName": "ab",
-      "id": 4
-    },
-    {
-      "email": "aaaa@gmail.com",
-      "password": "abcd",
-      "fName": "abcd",
-      "lName": "abcd",
-      "id": 5
-    },
-    {
-      "email": "a122@gmail.com",
-      "password": "a122",
-      "fName": "a122",
-      "lName": "a122",
-      "id": 6
     }
   ]
 }

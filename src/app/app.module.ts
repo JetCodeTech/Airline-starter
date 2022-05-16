@@ -20,14 +20,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AuthGuard } from './guards/auth.guard';
+import { AuthadminGuard } from './guards/authadmin.guard';
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "searchflights", component: SearchflightsComponent, canActivate: [AuthGuard] },
-  { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [UserGuard] },
-  { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AdminGuard] },
+  { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [AuthGuard] },
+  { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AuthadminGuard] },
   { path: "**", redirectTo: "" }
 ];
 

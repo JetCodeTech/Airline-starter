@@ -14,7 +14,6 @@ export class AuthadminGuard implements CanActivate {
 
     let status = false;
     let res = getItem('auth');
-    console.log(res, 'res')
     if (res && res.userValid && res.role == 1) {
       status = true
     } else {

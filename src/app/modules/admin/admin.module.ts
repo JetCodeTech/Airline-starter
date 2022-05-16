@@ -8,15 +8,16 @@ import { ViewscheduleComponent } from './admincomponents/viewschedule/viewschedu
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from 'src/app/components/register/register.component';
+import { DashboardComponent } from './admincomponents/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: "addflight", component: AddflightComponent },
-  { path: "viewflights", component: ViewflightsComponent },
-  { path: "addschedule", component: AddscheduleComponent },
-  { path: "viewschedule", component: ViewscheduleComponent },
+  { path: "", component: DashboardComponent },
+  { path: "add-flight", component: AddflightComponent },
+  { path: "view-flights", component: ViewflightsComponent },
+  { path: "add-schedule", component: AddscheduleComponent },
+  { path: "view-schedule", component: ViewscheduleComponent },
   { path: "create-admin", component: RegisterComponent }
-
 ];
 
 @NgModule({
@@ -24,7 +25,8 @@ const routes: Routes = [
     AddflightComponent,
     ViewflightsComponent,
     AddscheduleComponent,
-    ViewscheduleComponent
+    ViewscheduleComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

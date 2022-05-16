@@ -15,9 +15,8 @@ export class NavbarComponent implements OnInit {
   }
   logout() {
     this.auth.isLoggedIn.next(false)
-    this.router.navigate(['/login'])
     localStorage.clear()
-
+    this.router.navigate(['/login'])
   }
 
 }

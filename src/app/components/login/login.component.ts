@@ -31,11 +31,14 @@ export class LoginComponent implements OnInit {
       if (validUser) {
         this.login.reset()
         this.auth.isLoggedIn.next(true)
-        setItem('auth', JSON.stringify({ userValid: true, role: 2 }));
-        this.router.navigate(['/searchflights'])
+        setItem('auth', JSON.stringify({ userValid: true, role: validUser.role }));
+        if (validUser.role == 2) {
+          this.router.navigate(['/searchflights'])
+        } else {
+          this.router.navigate(['/admin'])
+        }
+
       } else {
-        this.auth.isLoggedIn.next(false)
-        setItem('auth', JSON.stringify({ userValid: true, role: 3 }));
         this.router.navigate(['/login'])
       }
 
