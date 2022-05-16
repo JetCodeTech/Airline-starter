@@ -46,29 +46,35 @@ export class AddscheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSchedule(source:string, destination:string, flightDate:string, startTime:string, endTime:string, numberOfSeats:string, numberOfVacantSeats:string, ticketCost:string) {
-    this.airline = this.adminService.airlineForScheduling;
-    let schedule = new Schedule(
-                                  0,
-                                  this.airline,
-                                  source,
-                                  destination,
-                                  new Date(flightDate),
-                                  startTime,
-                                  endTime,
-                                  parseInt(numberOfSeats),
-                                  parseInt(numberOfSeats),
-                                  parseFloat(ticketCost)
-                              );
-      this.adminService.addSchedule(schedule).subscribe({
-        next: (response:any) => {
-          alert(`Schedule added successfully`);
-          this.router.navigate(["/", "admin", "viewschedule"])
-        },
-        error: err => {
-          alert(`Airline could not be added. Please check console logs for now`);
-          console.error(err);
-        }
-      });
+  addSchedule()
+  {
+    let adds = this.addscheduleForm.value
+    console.log(adds,"adds")
   }
+
+  // addSchedule(source:string, destination:string, flightDate:string, startTime:string, endTime:string, numberOfSeats:string, numberOfVacantSeats:string, ticketCost:string) {
+  //   this.airline = this.adminService.airlineForScheduling;
+  //   let schedule = new Schedule(
+  //                                 0,
+  //                                 this.airline,
+  //                                 source,
+  //                                 destination,
+  //                                 new Date(flightDate),
+  //                                 startTime,
+  //                                 endTime,
+  //                                 parseInt(numberOfSeats),
+  //                                 parseInt(numberOfSeats),
+  //                                 parseFloat(ticketCost)
+  //                             );
+  //     this.adminService.addSchedule(schedule).subscribe({
+  //       next: (response:any) => {
+  //         alert(`Schedule added successfully`);
+  //         this.router.navigate(["/", "admin", "viewschedule"])
+  //       },
+  //       error: err => {
+  //         alert(`Airline could not be added. Please check console logs for now`);
+  //         console.error(err);
+  //       }
+  //     });
+  // }
 }

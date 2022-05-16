@@ -1,11 +1,21 @@
-<div align="center">
-    <form 
-      [formGroup]="addflightForm"
-      (submit)="addAirline(name.value, contact.value)">
-        Airline Name: <span class="required">*</span>:<br>
-        <input #name type="text" formControlName="name"><br>
-        Contact number:<span class="required">*</span>:<br>
-        <input #contact type="text" formControlName="contact"><br>
-        <input type="submit" value="Add Airline" [disabled]="addflightForm.invalid">
-    </form>
-</div>
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile> <mat-card> <form class="example-form" [formGroup]="addflightForm">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Airline number</mat-label>
+      <input matInput placeholder="Enter airline number" formControlName = "name">
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Contact number </mat-label>
+      <input matInput placeholder="Enter contact number" formControlName = "contact">
+    </mat-form-field>
+    
+    <button mat-raised-button class="example-full-width" color="primary" (click)="addAirline()" >Add airline</button>
+    
+    </form></mat-card></mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+
+</mat-grid-list>
+
+ 

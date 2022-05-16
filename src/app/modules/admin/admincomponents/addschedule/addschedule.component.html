@@ -1,49 +1,55 @@
-<div align="center">
-<form [formGroup]="addscheduleForm"
-        (submit)="addSchedule(source.value, destination.value, flightDate.value, startTime.value, endTime.value, numberOfSeats.value, numberOfSeats.value, ticketCost.value)">
-    <table>
-        <tr *ngIf="!!airline && !!airline.name">
-            <td>Airline Name:</td>
-            <td>{{airline.name}}</td>
-        </tr>
-        <tr *ngIf="!!airline && !!airline.id">
-            <td>Airline ID:</td>
-            <td>{{airline.id}}</td>
-        </tr>
-        <tr>
-            <td>Source:</td>
-            <td><input #source type="text" formControlName="source"><br></td>
-        </tr>
-        <tr>
-            <td>Destination:</td>
-            <td><input #destination type="text" formControlName="destination"><br></td>
-        </tr>
-        <tr>
-            <td>Flight Date:</td>
-            <td><input #flightDate type="date" formControlName="flightDate"></td>
-        </tr>
-        <tr>
-            <td>Start Time:</td>
-            <td><input #startTime type="text" formControlName="startTime"><br></td>
-        </tr>
-        <tr>
-            <td>End Time:</td>
-            <td><input #endTime type="text" formControlName="endTime"><br></td>
-        </tr>
-        <tr>
-            <td>Number Of Seats:</td>
-            <td><input #numberOfSeats type="number" formControlName="numberOfSeats"><br></td>
-        </tr>
-        <tr>
-            <td>Ticket Cost:</td>
-            <td><input #ticketCost type="number" formControlName="ticketCost"><br></td>
-        </tr>
+<mat-grid-list cols="3" rowHeight="1:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+        <mat-card class="card">
+            <form class="example-form" [formGroup]="addscheduleForm">
+                <!-- <div *ngIf="!!airline && !!airline.name">
+                    <td>Airline Name:</td>
+                    <td>{{airline.name}}</td>
+                </div>
+                <div *ngIf="!!airline && !!airline.id">
+                    <td>Airline ID:</td>
+                    <td>{{airline.id}}</td>
+                </div> -->
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Source:</mat-label>
+                    <input matInput placeholder="Source" formControlName="source">
+                </mat-form-field>
 
-        <tr>
-            <input type="submit" value="Add Schedule" [disabled]="addscheduleForm.invalid">
-        </tr>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Destination </mat-label>
+                    <input matInput placeholder="Destination" formControlName="destination">
+                </mat-form-field>
 
-    </table>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Flight date </mat-label>
+                    <input matInput placeholder="Flight date" formControlName="flightDate">
+                </mat-form-field>
 
-</form>
-</div>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Start time </mat-label>
+                    <input matInput placeholder="Start time" formControlName="startTime">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>End time </mat-label>
+                    <input matInput placeholder="End time" formControlName="endTime">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Number of seats </mat-label>
+                    <input matInput placeholder="Number of seats" formControlName="numberOfSeats">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Ticket cost </mat-label>
+                    <input matInput placeholder="Ticket cost" formControlName="ticketCost">
+                </mat-form-field>
+
+                <button mat-raised-button class="example-full-width" color="primary" (click)="addSchedule()" >Add schedule</button>
+            </form>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+
+</mat-grid-list>

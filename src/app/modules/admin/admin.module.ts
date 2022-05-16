@@ -7,8 +7,13 @@ import { AddscheduleComponent } from './admincomponents/addschedule/addschedule.
 import { ViewscheduleComponent } from './admincomponents/viewschedule/viewschedule.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from 'src/app/components/register/register.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
 
 const routes: Routes = [
   { path: "addflight", component: AddflightComponent },
@@ -30,7 +35,13 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule,
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatButtonModule
   ]
 })
 export class AdminModule { }
