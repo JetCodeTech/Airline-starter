@@ -12,16 +12,21 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { MyticketComponent } from './usercomponents/myticket/myticket.component';
+import {MatTableModule} from '@angular/material/table';
+
 const routes:Routes = [
 
   {path: "bookflight", component: BookflightComponent},
-  {path: "viewbookings", component: ViewbookingsComponent}
+  {path: "viewbookings", component: ViewbookingsComponent},
+  {path:"my-ticket",component:MyticketComponent}
 ];
 
 @NgModule({
   declarations: [
     BookflightComponent,
-    ViewbookingsComponent
+    ViewbookingsComponent,
+    MyticketComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,8 @@ const routes:Routes = [
     MatTooltipModule,
     MatCardModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ]
 })
 export class UserModule { }

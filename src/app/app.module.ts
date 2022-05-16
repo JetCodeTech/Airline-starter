@@ -23,10 +23,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthadminGuard } from './guards/authadmin.guard';
 import { ScheduleComponentComponent } from './modules/admin/admincomponents/schedule-component/schedule-component.component';
 import {MatIconModule} from '@angular/material/icon';
+import { TicketComponent } from './components/ticket/ticket.component';
+import { MyticketComponent } from './modules/user/usercomponents/myticket/myticket.component';
+import {MatTableModule} from '@angular/material/table';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
+  {path:"ticket",component:TicketComponent},
+  {path:"my-ticket",component:MyticketComponent},
   { path: "searchflights", component: SearchflightsComponent, canActivate: [AuthGuard] },
   { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [AuthGuard] },
   { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AuthadminGuard] },
@@ -40,7 +45,8 @@ const routes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    SearchflightsComponent
+    SearchflightsComponent,
+    TicketComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +60,8 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
