@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -16,7 +17,7 @@ export class AddscheduleComponent implements OnInit {
 
   airline: Airline | undefined;
 
-  constructor(private adminService: AdminService, private router: Router) {
+  constructor(private adminService: AdminService, private router: Router,private http:HttpClient) {
     this.addscheduleForm = new FormGroup({
       source: new FormControl("", [
         Validators.required
@@ -48,8 +49,12 @@ export class AddscheduleComponent implements OnInit {
 
   addSchedule()
   {
-    let adds = this.addscheduleForm.value
-    console.log(adds,"adds")
+    this.http.post("http://localhost:3000/schedule",this.addscheduleForm.value).subscribe(res=>{
+console.log(res,"resSchedule")
+    })
+
+    // let adds = this.addscheduleForm.value
+    // console.log(adds,"adds")
   }
 
   // addSchedule(source:string, destination:string, flightDate:string, startTime:string, endTime:string, numberOfSeats:string, numberOfVacantSeats:string, ticketCost:string) {

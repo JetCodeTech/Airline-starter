@@ -7,6 +7,9 @@
     routerLink="searchflights"
     >Search Flight</a
   >
+  <a mat-button  *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1" routerLink="/admin/schedule"
+  >Schedule</a
+>
   <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="login"
     >Login</a
   >
@@ -22,6 +25,7 @@
   <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="register"
     >Register</a
   >
+ 
 
 
 

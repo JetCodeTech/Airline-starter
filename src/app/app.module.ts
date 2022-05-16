@@ -21,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthadminGuard } from './guards/authadmin.guard';
-
+import { ScheduleComponentComponent } from './modules/admin/admincomponents/schedule-component/schedule-component.component';
+import {MatIconModule} from '@angular/material/icon';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
@@ -52,7 +53,8 @@ const routes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

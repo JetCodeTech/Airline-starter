@@ -16,6 +16,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import { ScheduleComponentComponent } from './admincomponents/schedule-component/schedule-component.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   { path: "", component: DashboardComponent },
@@ -23,7 +26,8 @@ const routes: Routes = [
   { path: "view-flights", component: ViewflightsComponent },
   { path: "add-schedule", component: AddscheduleComponent },
   { path: "view-schedule", component: ViewscheduleComponent },
-  { path: "create-admin", component: RegisterComponent }
+  { path: "create-admin", component: RegisterComponent },
+  { path: "schedule", component: ScheduleComponentComponent },
 ];
 
 @NgModule({
@@ -32,7 +36,8 @@ const routes: Routes = [
     ViewflightsComponent,
     AddscheduleComponent,
     ViewscheduleComponent,
-    DashboardComponent
+    DashboardComponent,
+    ScheduleComponentComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +49,9 @@ const routes: Routes = [
     MatCardModule,
     MatFormFieldModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    MatIconModule
   ]
 })
 export class AdminModule { }
