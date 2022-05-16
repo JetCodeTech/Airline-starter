@@ -1,0 +1,39 @@
+<p *ngIf="tickets.length==0">
+    No airlines are available
+</p>
+
+<table *ngIf="tickets.length>0">
+    <tr>
+        <th>S.No.</th>
+        <th>Ticket Id</th>
+        <th>Airline Name</th>
+        <th>name</th>
+        <th>ageGroup</th>
+        <th>gender</th>
+        <th>mealOption</th>
+        <th>source</th>
+        <th>destination</th>
+        <th>flightDate</th>
+        <th>flightTime</th>
+        <th>cost</th>
+        <th>pnr</th>
+    </tr>
+    <tr *ngFor="let ticket of tickets;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.airlineName}}</td>
+        <td>{{ticket.name}}</td>
+        <td>{{ticket.ageGroup}}</td>
+        <td>{{ticket.gender}}</td>
+        <td>{{ticket.mealOption}}</td>
+        <td>{{ticket.source}}</td>
+        <td>{{ticket.destination}}</td>
+        <td>{{ticket.flightDate}}</td>
+        <td>{{ticket.flightTime}}</td>
+        <td>{{ticket.cost}}</td>
+        <td>{{ticket.pnr}}</td>
+
+    </tr>
+
+
+</table>

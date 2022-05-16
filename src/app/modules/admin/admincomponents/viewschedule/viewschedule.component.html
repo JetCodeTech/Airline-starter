@@ -1,0 +1,38 @@
+<p *ngIf="schedules.length==0">
+    No schedules are available
+</p>
+
+<table *ngIf="schedules.length>0">
+    <tr>
+        <th>S.No.</th>
+        <th>Schedule Id</th>
+        <th>Airline Name</th>
+        <th>Airline Id</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Flight Date</th>
+        <th>Start Time</th>
+        <th>End Time</th>
+        <th>Number Of Seats</th>
+        <th>Number Of Vacant Seats</th>
+        <th>Ticket Cost</th>
+
+    </tr>
+    <tr *ngFor="let schedule of schedules;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{schedule.id}}</td>
+        <td><span *ngIf="!!schedule && !!schedule.airline && schedule.airline.name">{{schedule.airline.name}}</span></td>
+        <td><span *ngIf="!!schedule && !!schedule.airline && schedule.airline.id">{{schedule.airline.id}}</span></td>
+        <td>{{schedule.source}}</td>
+        <td>{{schedule.destination}}</td>
+        <td>{{schedule.flightDate  | date:"dd-MM-yyyy"}}</td>
+        <td>{{schedule.startTime}}</td>
+        <td>{{schedule.endTime}}</td>
+        <td>{{schedule.numberOfSeats}}</td>
+        <td>{{schedule.numberOfVacantSeats}}</td>
+        <td>{{schedule.ticketCost}}</td>
+
+    </tr>
+
+
+</table>

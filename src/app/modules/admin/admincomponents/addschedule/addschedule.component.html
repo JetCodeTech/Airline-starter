@@ -1,0 +1,49 @@
+<div align="center">
+<form [formGroup]="addscheduleForm"
+        (submit)="addSchedule(source.value, destination.value, flightDate.value, startTime.value, endTime.value, numberOfSeats.value, numberOfSeats.value, ticketCost.value)">
+    <table>
+        <tr *ngIf="!!airline && !!airline.name">
+            <td>Airline Name:</td>
+            <td>{{airline.name}}</td>
+        </tr>
+        <tr *ngIf="!!airline && !!airline.id">
+            <td>Airline ID:</td>
+            <td>{{airline.id}}</td>
+        </tr>
+        <tr>
+            <td>Source:</td>
+            <td><input #source type="text" formControlName="source"><br></td>
+        </tr>
+        <tr>
+            <td>Destination:</td>
+            <td><input #destination type="text" formControlName="destination"><br></td>
+        </tr>
+        <tr>
+            <td>Flight Date:</td>
+            <td><input #flightDate type="date" formControlName="flightDate"></td>
+        </tr>
+        <tr>
+            <td>Start Time:</td>
+            <td><input #startTime type="text" formControlName="startTime"><br></td>
+        </tr>
+        <tr>
+            <td>End Time:</td>
+            <td><input #endTime type="text" formControlName="endTime"><br></td>
+        </tr>
+        <tr>
+            <td>Number Of Seats:</td>
+            <td><input #numberOfSeats type="number" formControlName="numberOfSeats"><br></td>
+        </tr>
+        <tr>
+            <td>Ticket Cost:</td>
+            <td><input #ticketCost type="number" formControlName="ticketCost"><br></td>
+        </tr>
+
+        <tr>
+            <input type="submit" value="Add Schedule" [disabled]="addscheduleForm.invalid">
+        </tr>
+
+    </table>
+
+</form>
+</div>

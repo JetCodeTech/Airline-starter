@@ -1,0 +1,34 @@
+<p>Booking ticket from {{bookingSource}} to {{bookingDestination}} on {{bookingAirlineName}}!</p>
+
+<div align="center">
+    <form 
+    [formGroup]="passengerForm"
+    (submit)="addPassenger(name.value, gender.value, ageGroup.value, mealOption.value)">
+      Name<span class="required">*</span> <input #name type="text" formControlName="name">
+      Gender<span class="required">*</span> <input #gender type="text" formControlName="gender">
+      Age Group<span class="required">*</span> <input #ageGroup type="text" formControlName="ageGroup">
+      Meal Option<input #mealOption type="text" formControlName="mealOption">
+      <input type="submit" value="Add Passenger" [disabled]="passengerForm.invalid">
+  </form>
+</div>
+
+
+<div align="center" *ngIf="passengers.length>0">
+    <table>
+        <tr>
+            <th>Sl. No</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Age Group</th>
+            <th>Meal Option</th>
+        </tr>
+        <tr *ngFor="let passenger of passengers; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{passenger.name}}</td>
+            <td>{{passenger.gender}}</td>
+            <td>{{passenger.ageGroup}}</td>
+            <td>{{passenger.mealOption}}</td>
+        </tr>
+        <tr><button (click)="bookTickets()">Book Tickets</button></tr>
+    </table>
+</div>

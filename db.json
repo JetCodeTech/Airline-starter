@@ -1,0 +1,25 @@
+{
+  "register": [
+    {
+      "email": "aa@gmail.com",
+      "password": "aaaaaaa",
+      "fName": "aaaaa",
+      "lName": "aaaaa",
+      "id": 1
+    },
+    {
+      "email": "aaa@gmail.com",
+      "password": "aaaaa",
+      "fName": "aaaaa",
+      "lName": "aaaaa",
+      "id": 2
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "abc",
+      "fName": "abc",
+      "lName": "abc",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+<mat-toolbar color="primary">
+    <div>Flight Tickets</div>
+    <div class="spacer"></div>
+    <a mat-button *ngIf="auth.isLoggedIn | async" routerLink="searchflights">Search Flight</a>
+        <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="login">Login</a>
+        <a mat-button *ngIf="auth.isLoggedIn | async" (click)="logout()" >Logout</a>
+        <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="register">Register</a>
+   
+</mat-toolbar>

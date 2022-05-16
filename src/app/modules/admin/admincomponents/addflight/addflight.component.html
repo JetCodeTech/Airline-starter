@@ -1,0 +1,11 @@
+<div align="center">
+    <form 
+      [formGroup]="addflightForm"
+      (submit)="addAirline(name.value, contact.value)">
+        Airline Name: <span class="required">*</span>:<br>
+        <input #name type="text" formControlName="name"><br>
+        Contact number:<span class="required">*</span>:<br>
+        <input #contact type="text" formControlName="contact"><br>
+        <input type="submit" value="Add Airline" [disabled]="addflightForm.invalid">
+    </form>
+</div>
