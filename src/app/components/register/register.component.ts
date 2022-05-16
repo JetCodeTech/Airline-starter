@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { getItem, setItem } from '../../utils/utils'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -16,22 +17,23 @@ export class RegisterComponent implements OnInit {
       password: new FormControl("", [Validators.required]),
       fName: new FormControl("", [Validators.required]),
       lName: new FormControl("", [Validators.required]),
+      role: new FormControl("2")
     })
   }
 
   ngOnInit(): void {
   }
   registerData() {
+    // let userRole = getItem('auth')
+    // if (userRole && userRole.role == 1) {
+    //   this.registerForm.value.role = 1
+    // }
     this.http.post("http://localhost:3000/register", this.registerForm.value).subscribe(res => {
       console.log(res, "res");
       if (res) {
         this.registerForm.reset()
         this.router.navigate(['/login'])
       }
-    })
-    this.auth.register(this.registerForm.value.email, this.registerForm.value.password, this.registerForm.value.fname, this.registerForm.value.lname).subscribe((res: any) => {
-      console.log(res);
-
     })
   }
 }

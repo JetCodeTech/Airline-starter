@@ -3,7 +3,7 @@
  <mat-grid-tile>
     <mat-card class="card"> 
         <div class="forms" [formGroup]="login">
-        <mat-form-field appearance="fill">
+        <mat-form-field class="loginform" appearance="fill">
             <mat-label>Email</mat-label>
             <input matInput type="email" formControlName="email">
            
@@ -11,7 +11,7 @@
         </mat-form-field> 
           
     
-          <mat-form-field appearance="fill">
+          <mat-form-field class="loginform" appearance="fill">
           <mat-label>Password</mat-label>
             <input matInput type="password" formControlName="password">
             <mat-error *ngIf="login.controls['password'].touched &&login.controls['password'].invalid">Password required</mat-error>

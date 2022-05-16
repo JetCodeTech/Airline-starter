@@ -26,7 +26,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
   { path: "searchflights", component: SearchflightsComponent, canActivate: [AuthGuard] },
-  { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [UserGuard] },
+  { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [] },
   { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AdminGuard] },
   { path: "**", redirectTo: "" }
 ];

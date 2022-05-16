@@ -1,11 +1,13 @@
-table {
-    border: 1px solid black;
+.formfield
+{
+    margin-left: 8px;
 }
-
-th, td {
-    border: 1px solid black;
+.card button 
+{
+    margin-left: 8px;
 }
-
-.required {
-    color: red;
+.card
+{
+    justify-content: center;
+    align-items: center;
 }

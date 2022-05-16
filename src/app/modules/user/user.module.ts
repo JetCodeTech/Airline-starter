@@ -5,7 +5,13 @@ import { BookflightComponent } from './usercomponents/bookflight/bookflight.comp
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewbookingsComponent } from './usercomponents/viewbookings/viewbookings.component';
-
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
 const routes:Routes = [
 
   {path: "bookflight", component: BookflightComponent},
@@ -21,7 +27,14 @@ const routes:Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatInputModule,
+    MatTooltipModule,
+    MatCardModule,
+    MatButtonModule,
+    MatSelectModule
   ]
 })
 export class UserModule { }
