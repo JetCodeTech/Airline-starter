@@ -17,7 +17,7 @@ export class AddscheduleComponent implements OnInit {
 
   airline: Airline | undefined;
 
-  constructor(private adminService: AdminService, private router: Router,private http:HttpClient) {
+  constructor(private adminService: AdminService, private router: Router, private http: HttpClient) {
     this.addscheduleForm = new FormGroup({
       source: new FormControl("", [
         Validators.required
@@ -34,12 +34,13 @@ export class AddscheduleComponent implements OnInit {
       endTime: new FormControl("", [
         Validators.required
       ]),
-      numberOfSeats: new FormControl("", [
+      numberOfSeats: new FormControl(1, [
         Validators.required
       ]),
       ticketCost: new FormControl("", [
         Validators.required
-      ])
+      ]),
+      booked: new FormControl(0)
     })
     this.airline = this.adminService.airlineForScheduling;
   }
@@ -47,39 +48,15 @@ export class AddscheduleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addSchedule()
-  {
-    this.http.post("http://localhost:3000/schedule",this.addscheduleForm.value).subscribe(res=>{
-console.log(res,"resSchedule")
+  addSchedule() {
+    this.addscheduleForm.value.booked = this.addscheduleForm.value.numberOfSeats
+    this.http.post("http://localhost:3000/schedule", this.addscheduleForm.value).subscribe(res => {
+      console.log(res, "resSchedule")
+      if(res)
+      {
+        this.router.navigate(['/admin/schedule'])
+      }
     })
-
-    // let adds = this.addscheduleForm.value
-    // console.log(adds,"adds")
+    this.addscheduleForm.reset();
   }
-
-  // addSchedule(source:string, destination:string, flightDate:string, startTime:string, endTime:string, numberOfSeats:string, numberOfVacantSeats:string, ticketCost:string) {
-  //   this.airline = this.adminService.airlineForScheduling;
-  //   let schedule = new Schedule(
-  //                                 0,
-  //                                 this.airline,
-  //                                 source,
-  //                                 destination,
-  //                                 new Date(flightDate),
-  //                                 startTime,
-  //                                 endTime,
-  //                                 parseInt(numberOfSeats),
-  //                                 parseInt(numberOfSeats),
-  //                                 parseFloat(ticketCost)
-  //                             );
-  //     this.adminService.addSchedule(schedule).subscribe({
-  //       next: (response:any) => {
-  //         alert(`Schedule added successfully`);
-  //         this.router.navigate(["/", "admin", "viewschedule"])
-  //       },
-  //       error: err => {
-  //         alert(`Airline could not be added. Please check console logs for now`);
-  //         console.error(err);
-  //       }
-  //     });
-  // }
 }
