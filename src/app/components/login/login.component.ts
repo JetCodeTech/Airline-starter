@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
       if (validUser) {
         this.login.reset()
         this.auth.isLoggedIn.next(true)
+        this.auth.userRole.next(validUser.role)
         setItem('auth', JSON.stringify({ userValid: true, role: validUser.role }));
         if (validUser.role == 2) {
           this.router.navigate(['/searchflights'])
