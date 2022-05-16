@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { toast,TYPE } from '../../../../utils/utils'
+
 export interface PeriodicElement {
   id: number;
   name: string;
@@ -35,6 +37,9 @@ getFlightData(){
 deleteFlightData(id:any){
 this.http.delete("http://localhost:3000/addFlight/"+id).subscribe((res)=>{
   console.log(res,"deleteItem")
+  if (res) {
+    toast(TYPE.SUCCESS, false, 'Flight Deleted Successfully')
+  }
   this.getFlightData()
 })
 

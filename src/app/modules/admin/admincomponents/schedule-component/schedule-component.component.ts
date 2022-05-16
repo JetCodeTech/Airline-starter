@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { toast,TYPE } from '../../../../utils/utils'
+
 
 
 export interface PeriodicElement {
@@ -45,6 +47,9 @@ export class ScheduleComponentComponent implements OnInit {
     this.http.delete("http://localhost:3000/schedule/" + id).subscribe((res: any) => {
       console.log(res);
       this.getSchedule();
+      if (res) {
+        toast(TYPE.SUCCESS, false, 'Schedule Deleted Successfully')
+      }
 
     })
   }
