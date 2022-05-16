@@ -28,6 +28,9 @@ export class AddscheduleComponent implements OnInit {
       flightDate: new FormControl("", [
         Validators.required
       ]),
+      flightName: new FormControl("", [
+        Validators.required
+      ]),
       startTime: new FormControl("", [
         Validators.required
       ]),
@@ -52,8 +55,7 @@ export class AddscheduleComponent implements OnInit {
     this.addscheduleForm.value.booked = this.addscheduleForm.value.numberOfSeats
     this.http.post("http://localhost:3000/schedule", this.addscheduleForm.value).subscribe(res => {
       console.log(res, "resSchedule")
-      if(res)
-      {
+      if (res) {
         this.router.navigate(['/admin/schedule'])
       }
     })

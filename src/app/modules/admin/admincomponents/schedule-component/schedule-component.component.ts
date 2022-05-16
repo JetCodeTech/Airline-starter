@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 
 export interface PeriodicElement {
   id: number;
+  flightName: string,
   Source: string;
   Destination: string;
   flightDate: string;
@@ -11,7 +12,7 @@ export interface PeriodicElement {
   endTime: string;
   numberOfSeats: string;
   ticketcost: string;
-  booked:string
+  booked: string
 }
 
 @Component({
@@ -24,7 +25,7 @@ export class ScheduleComponentComponent implements OnInit {
 
 
   ELEMENT_DATA: PeriodicElement[] = [];
-  displayedColumns: string[] = ['Id', 'Source', 'Destination', 'Flight Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price','Booked', 'Actions'];
+  displayedColumns: string[] = ['No', 'flightName', 'Source', 'Destination', 'Flight Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price', 'Actions'];
   dataSource = this.ELEMENT_DATA;
 
 
