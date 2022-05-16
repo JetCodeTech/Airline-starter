@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { Airline } from 'src/app/models/airline';
 import { Schedule } from 'src/app/models/schedule';
 import { AdminService } from 'src/app/services/admin.service';
+import { toast, TYPE } from '../../../../utils/utils'
+
+
 
 @Component({
   selector: 'app-addschedule',
@@ -54,9 +57,10 @@ export class AddscheduleComponent implements OnInit {
   addSchedule() {
     this.addscheduleForm.value.booked = this.addscheduleForm.value.numberOfSeats
     this.http.post("http://localhost:3000/schedule", this.addscheduleForm.value).subscribe(res => {
-      console.log(res, "resSchedule")
       if (res) {
+
         this.router.navigate(['/admin/schedule'])
+        toast(TYPE.SUCCESS, false, 'Schedule Saved Successfully')
       }
     })
     this.addscheduleForm.reset();
