@@ -3,11 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-<<<<<<< HEAD
 import { getItem } from 'src/app/utils/utils';
-=======
-import { getItem, setItem } from '../../utils/utils'
->>>>>>> origin/adminRegister
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
