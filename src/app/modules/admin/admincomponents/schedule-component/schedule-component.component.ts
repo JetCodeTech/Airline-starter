@@ -6,7 +6,8 @@ export interface PeriodicElement {
   id: number;
   Source: string;
   Destination: string;
-  flightDate: string;
+  dispatcheddate: Date;
+  arraiveddate: Date;
   startTime: string;
   endTime: string;
   numberOfSeats: string;
@@ -24,7 +25,7 @@ export class ScheduleComponentComponent implements OnInit {
 
 
   ELEMENT_DATA: PeriodicElement[] = [];
-  displayedColumns: string[] = ['Id', 'Source', 'Destination', 'Flight Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price','Booked', 'Actions'];
+  displayedColumns: string[] = ['Id', 'Source', 'Destination', 'Dispatched Date','Arraived Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price','Booked', 'Actions'];
   dataSource = this.ELEMENT_DATA;
 
 
@@ -32,6 +33,8 @@ export class ScheduleComponentComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    console.log();
+    
     this.getSchedule();
   }
 
@@ -39,6 +42,8 @@ export class ScheduleComponentComponent implements OnInit {
   getSchedule() {
     this.http.get("http://localhost:3000/schedule").subscribe((res: any) => {
       this.dataSource = res;
+      console.log(res,"getttt");
+      
     })
   }
   delete(id: any) {

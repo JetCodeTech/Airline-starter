@@ -25,7 +25,10 @@ export class AddscheduleComponent implements OnInit {
       destination: new FormControl("", [
         Validators.required
       ]),
-      flightDate: new FormControl("", [
+      dispatcheddate: new FormControl("", [
+        Validators.required
+      ]),
+      arraiveddate: new FormControl("", [
         Validators.required
       ]),
       startTime: new FormControl("", [

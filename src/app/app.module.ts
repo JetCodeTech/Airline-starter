@@ -11,7 +11,6 @@ import { UserGuard } from './guards/user.guard';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { SearchflightsComponent } from './components/searchflights/searchflights.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,11 +22,12 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthadminGuard } from './guards/authadmin.guard';
 import { ScheduleComponentComponent } from './modules/admin/admincomponents/schedule-component/schedule-component.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-  { path: "searchflights", component: SearchflightsComponent, canActivate: [AuthGuard] },
+
   { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [AuthGuard] },
   { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AuthadminGuard] },
   { path: "**", redirectTo: "" }
@@ -40,7 +40,6 @@ const routes: Routes = [
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    SearchflightsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +53,8 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

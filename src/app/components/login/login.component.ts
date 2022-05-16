@@ -32,9 +32,9 @@ export class LoginComponent implements OnInit {
         this.login.reset()
         this.auth.isLoggedIn.next(true)
         this.auth.userRole.next(validUser.role)
-        setItem('auth', JSON.stringify({ userValid: true, role: validUser.role }));
+        setItem('auth', JSON.stringify({ userValid: true, role: validUser.role ,userId: validUser.id}));
         if (validUser.role == 2) {
-          this.router.navigate(['/searchflights'])
+          this.router.navigate(['/user/searchflights'])
         } else {
           this.router.navigate(['/admin'])
         }
