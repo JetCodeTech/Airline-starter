@@ -17,9 +17,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
 import { ScheduleComponentComponent } from './admincomponents/schedule-component/schedule-component.component';
-import {MatTableModule} from '@angular/material/table';
-import {MatIconModule} from '@angular/material/icon';
 
+import { FlightDashboardComponent } from './admincomponents/flight-dashboard/flight-dashboard.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatSortModule } from '@angular/material/sort';
+import { MatIconModule } from '@angular/material/icon';
 const routes: Routes = [
   { path: "", component: DashboardComponent },
   { path: "add-flight", component: AddflightComponent },
@@ -28,6 +31,7 @@ const routes: Routes = [
   { path: "view-schedule", component: ViewscheduleComponent },
   { path: "create-admin", component: RegisterComponent },
   { path: "schedule", component: ScheduleComponentComponent },
+  { path: "flight-dashboard", component: FlightDashboardComponent },
 ];
 
 @NgModule({
@@ -37,7 +41,8 @@ const routes: Routes = [
     AddscheduleComponent,
     ViewscheduleComponent,
     DashboardComponent,
-    ScheduleComponentComponent
+    ScheduleComponentComponent,
+    FlightDashboardComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +56,8 @@ const routes: Routes = [
     MatGridListModule,
     MatButtonModule,
     MatTableModule,
+    MatListModule,
+    MatSortModule,
     MatIconModule
   ]
 })

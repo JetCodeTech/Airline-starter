@@ -25,5 +25,16 @@
       "id": 3
     }
   ],
-  "schedule": []
+  "addFlight": [
+    {
+      "name": "2132435345",
+      "contact": "34534534534",
+      "id": 2
+    },
+    {
+      "name": "air",
+      "contact": "3456",
+      "id": 3
+    }
+  ]
 }

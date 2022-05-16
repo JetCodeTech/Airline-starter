@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-addflight',
@@ -12,7 +13,7 @@ export class AddflightComponent implements OnInit {
 
   addflightForm:FormGroup;
 
-  constructor(private adminService:AdminService,private router: Router) {
+  constructor(private adminService:AdminService,private router: Router,private http:HttpClient) {
     this.addflightForm = new FormGroup({
       name: new FormControl("", [
         Validators.required,
@@ -48,6 +49,10 @@ export class AddflightComponent implements OnInit {
   addAirline()
   {
     let addflight = this.addflightForm.value
-    console.log(addflight,"addflight")
+    
+    this.http.post(" http://localhost:3000/addFlight",addflight).subscribe((res)=>{
+      console.log(res,"addflight1")
+    })
+    this.addflightForm.reset();
   }
 }
