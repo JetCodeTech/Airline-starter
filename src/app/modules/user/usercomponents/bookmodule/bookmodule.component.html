@@ -1,0 +1,7 @@
+
+<mat-form-field appearance="fill">
+    <mat-label>Passenger Name</mat-label>
+    <input matInput [(ngModel)]="name">
+</mat-form-field>
+<button style="margin-right: 10px;" mat-raised-button color="primary" (click)="Submit()">Submit</button>
+<button  mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>

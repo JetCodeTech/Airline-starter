@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { toast,TYPE } from '../../../../utils/utils'
+import { toast, TYPE } from '../../../../utils/utils'
 
 
 
@@ -9,7 +9,8 @@ export interface PeriodicElement {
   flightName: string,
   Source: string;
   Destination: string;
-  flightDate: string;
+  dispatcheddate: Date;
+  arraiveddate: Date;
   startTime: string;
   endTime: string;
   numberOfSeats: string;
@@ -35,6 +36,8 @@ export class ScheduleComponentComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    console.log();
+
     this.getSchedule();
   }
 
@@ -42,6 +45,8 @@ export class ScheduleComponentComponent implements OnInit {
   getSchedule() {
     this.http.get("http://localhost:3000/schedule").subscribe((res: any) => {
       this.dataSource = res;
+      console.log(res, "getttt");
+
     })
   }
   delete(id: any) {
