@@ -17,11 +17,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BookmoduleComponent } from './usercomponents/bookmodule/bookmodule.component';
+import { MyticketComponent } from './usercomponents/myticket/myticket.component';
+
 const routes: Routes = [
 
   { path: "bookflight", component: BookflightComponent },
   { path: "viewbookings", component: ViewbookingsComponent },
-  { path: "searchflights", component: SearchflightsComponent },
+  { path: "my-ticket", component: MyticketComponent }
 ];
 
 @NgModule({
@@ -30,7 +32,8 @@ const routes: Routes = [
     ViewbookingsComponent,
     SearchflightsComponent,
     BookmoduleComponent,
-    SearchflightsComponent
+    SearchflightsComponent,
+    MyticketComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +54,8 @@ const routes: Routes = [
     MatIconModule,
     MatTableModule,
     MatDialogModule,
-    FormsModule
+    FormsModule,
+    MatTableModule
   ]
 })
 export class UserModule { }

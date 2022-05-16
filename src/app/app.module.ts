@@ -21,13 +21,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthadminGuard } from './guards/authadmin.guard';
 import { ScheduleComponentComponent } from './modules/admin/admincomponents/schedule-component/schedule-component.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatTableModule} from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 const routes: Routes = [
   { path: "", component: LoginComponent },
   { path: "login", component: LoginComponent },
   { path: "register", component: RegisterComponent },
-
   { path: "user", loadChildren: () => import("./modules/user/user.module").then(module => module.UserModule), canActivate: [AuthGuard] },
   { path: "admin", loadChildren: () => import("./modules/admin/admin.module").then(module => module.AdminModule), canActivate: [AuthadminGuard] },
   { path: "**", redirectTo: "" }

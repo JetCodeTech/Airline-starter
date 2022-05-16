@@ -7,6 +7,13 @@
     routerLink="searchflights"
     >Search Flight</a
   >
+  <a
+    mat-button
+    *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 2"
+    routerLink="/user/my-ticket"
+    >My Tickets</a
+  >
+
   <a mat-button  *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1" routerLink="/admin/schedule"
   >Schedule</a
 >
