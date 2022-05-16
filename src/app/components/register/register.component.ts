@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
       email : new FormControl("",[Validators.required, Validators.email]),
       password: new FormControl("",[Validators.required]),
       fName: new FormControl("",[Validators.required]),
-      lName: new FormControl("",[Validators.required])
+      lName: new FormControl("",[Validators.required]),
     })
    }
 
@@ -24,13 +24,17 @@ export class RegisterComponent implements OnInit {
 
   registerData()
   {
-    this.http.post("http://localhost:3000/register",this.registerForm.value).subscribe(res=>{
-      console.log(res,"res");
-      if(res){
+  
+  
+
+
+    // this.http.post("http://localhost:3000/register",this.registerForm.value).subscribe(res=>{
+    //   console.log(res,"res");
+    //   if(res){
 this.registerForm.reset()
 this.router.navigate(['/login'])
-      }
-    })
+    //   }
+    // })
 //  this.auth.register(this.registerForm.value.email,this.registerForm.value.password,this.registerForm.value.fname,this.registerForm.value.lname).subscribe((res:any)=>{
 //    console.log(res);
    

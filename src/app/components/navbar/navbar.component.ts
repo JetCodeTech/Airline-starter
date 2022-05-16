@@ -18,6 +18,8 @@ export class NavbarComponent implements OnInit {
     this.auth.isLoggedIn.next(false)
     this.router.navigate(['/login'])
 
+    localStorage.clear()
+
   }
 
 }
