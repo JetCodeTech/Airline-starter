@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
 const routes: Routes = [
   { path: "", component: DashboardComponent },
   { path: "add-flight", component: AddflightComponent },
@@ -58,7 +59,8 @@ const routes: Routes = [
     MatTableModule,
     MatListModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ]
 })
 export class AdminModule { }

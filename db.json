@@ -36,5 +36,29 @@
       "contact": "3456",
       "id": 3
     }
+  ],
+  "schedule": [
+    {
+      "source": "aa",
+      "destination": "chennai",
+      "flightDate": "aa",
+      "flightName": "Jass",
+      "startTime": "aa",
+      "endTime": "aaa",
+      "numberOfSeats": 22,
+      "ticketCost": "aa",
+      "id": 1
+    },
+    {
+      "source": "aa@gmail.com",
+      "destination": "aa",
+      "flightDate": "aa",
+      "flightName": "Jass",
+      "startTime": "aa",
+      "endTime": "aa",
+      "numberOfSeats": 22,
+      "ticketCost": "aa",
+      "id": 2
+    }
   ]
 }

@@ -28,13 +28,16 @@ export class AddscheduleComponent implements OnInit {
       flightDate: new FormControl("", [
         Validators.required
       ]),
+      flightName: new FormControl("", [
+        Validators.required
+      ]),
       startTime: new FormControl("", [
         Validators.required
       ]),
       endTime: new FormControl("", [
         Validators.required
       ]),
-      numberOfSeats: new FormControl("", [
+      numberOfSeats: new FormControl(0, [
         Validators.required
       ]),
       ticketCost: new FormControl("", [
@@ -51,35 +54,11 @@ export class AddscheduleComponent implements OnInit {
   {
     this.http.post("http://localhost:3000/schedule",this.addscheduleForm.value).subscribe(res=>{
 console.log(res,"resSchedule")
+this.addscheduleForm.reset()
     })
 
-    // let adds = this.addscheduleForm.value
-    // console.log(adds,"adds")
+
   }
 
-  // addSchedule(source:string, destination:string, flightDate:string, startTime:string, endTime:string, numberOfSeats:string, numberOfVacantSeats:string, ticketCost:string) {
-  //   this.airline = this.adminService.airlineForScheduling;
-  //   let schedule = new Schedule(
-  //                                 0,
-  //                                 this.airline,
-  //                                 source,
-  //                                 destination,
-  //                                 new Date(flightDate),
-  //                                 startTime,
-  //                                 endTime,
-  //                                 parseInt(numberOfSeats),
-  //                                 parseInt(numberOfSeats),
-  //                                 parseFloat(ticketCost)
-  //                             );
-  //     this.adminService.addSchedule(schedule).subscribe({
-  //       next: (response:any) => {
-  //         alert(`Schedule added successfully`);
-  //         this.router.navigate(["/", "admin", "viewschedule"])
-  //       },
-  //       error: err => {
-  //         alert(`Airline could not be added. Please check console logs for now`);
-  //         console.error(err);
-  //       }
-  //     });
-  // }
+
 }

@@ -14,36 +14,52 @@
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Source:</mat-label>
                     <input matInput placeholder="Source" formControlName="source">
+                    <mat-error *ngIf="addscheduleForm.controls['source'].touched">Source is requierd</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Destination </mat-label>
                     <input matInput placeholder="Destination" formControlName="destination">
+                    <mat-error *ngIf="addscheduleForm.controls['destination'].touched">Destination is requierd</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Flight date </mat-label>
                     <input matInput placeholder="Flight date" formControlName="flightDate">
+                    <mat-error *ngIf="addscheduleForm.controls['flightDate'].touched">Flight date is requierd</mat-error>
                 </mat-form-field>
+
+                <mat-form-field  class="formfield" appearance="fill">
+                    <mat-label>Flight Name</mat-label>
+                    <mat-select formControlName="flightName">
+                      <mat-option value="Airlince">Airlince</mat-option>
+                      <mat-option value="Jass">Jass</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="addscheduleForm.controls['flightName'].touched">FlightName is requierd</mat-error>
+                  </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Start time </mat-label>
                     <input matInput placeholder="Start time" formControlName="startTime">
+                    <mat-error *ngIf="addscheduleForm.controls['startTime'].touched">Start time is requierd</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>End time </mat-label>
                     <input matInput placeholder="End time" formControlName="endTime">
+                    <mat-error *ngIf="addscheduleForm.controls['endTime'].touched">End time is requierd</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Number of seats </mat-label>
-                    <input matInput placeholder="Number of seats" formControlName="numberOfSeats">
+                    <input matInput type="number" placeholder="Number of seats" formControlName="numberOfSeats">
+                    <mat-error *ngIf="addscheduleForm.controls['numberOfSeats'].touched">Number of seats is requierd</mat-error>
                 </mat-form-field>
 
                 <mat-form-field class="example-full-width" appearance="fill">
                     <mat-label>Ticket cost </mat-label>
                     <input matInput placeholder="Ticket cost" formControlName="ticketCost">
+                    <mat-error *ngIf="addscheduleForm.controls['ticketCost'].touched">Ticket cost is requierd</mat-error>
                 </mat-form-field>
 
                 <button mat-raised-button class="example-full-width" color="primary" (click)="addSchedule()" >Add schedule</button>
