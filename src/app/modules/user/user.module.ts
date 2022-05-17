@@ -23,7 +23,8 @@ const routes: Routes = [
 
   { path: "bookflight", component: BookflightComponent },
   { path: "viewbookings", component: ViewbookingsComponent },
-  { path: "my-ticket", component: MyticketComponent }
+  { path: "my-ticket", component: MyticketComponent },
+  { path: "search-flights", component: SearchflightsComponent }
 ];
 
 @NgModule({

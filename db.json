@@ -18,46 +18,13 @@
       "id": 2,
       "tickets": [
         {
-          "name": "Arun",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 11
-        },
-        {
-          "name": "Madhan",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 11
-        },
-        {
-          "name": "Jack",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 11
-        },
-        {
-          "name": "Barath",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 11
-        },
-        {
-          "name": "Saran",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 1
-        },
-        {
-          "name": "Magesh",
-          "source": "malasiya",
-          "destination": "chennai",
-          "date": "2022-05-04",
-          "seat": 1
+          "id": 1,
+          "name": "dsd",
+          "source": "Chennai",
+          "destination": "Malaysia",
+          "date": "2022-05-19",
+          "seat": "75A",
+          "flightName": "air"
         }
       ]
     },
@@ -80,40 +47,17 @@
   ],
   "schedule": [
     {
-      "source": "malasiya",
-      "destination": "chennai",
-      "dispatcheddate": "2022-05-04",
-      "arraiveddate": "2022-05-31",
-      "startTime": "05:16",
-      "endTime": "16:15",
-      "numberOfSeats": 14,
-      "ticketCost": "2600",
-      "booked": 11,
-      "id": 11
-    },
-    {
-      "source": "coimbatore",
-      "destination": "pondy",
-      "dispatcheddate": "2022-05-02",
-      "arraiveddate": "2022-05-31",
-      "startTime": "13:18",
-      "endTime": "15:18",
-      "numberOfSeats": 4,
-      "ticketCost": "2000",
-      "booked": 4,
-      "id": 12
-    },
-    {
-      "source": "pune",
-      "destination": "mumbai",
-      "dispatcheddate": "2022-05-04",
-      "arraiveddate": "2022-05-12",
-      "startTime": "01:18",
-      "endTime": "14:21",
-      "numberOfSeats": 7,
-      "ticketCost": "5,00,000",
-      "booked": 7,
-      "id": 13
+      "source": "Chennai",
+      "destination": "Malaysia",
+      "dispatcheddate": "2022-05-19",
+      "arraiveddate": "2022-05-24",
+      "flightName": "air",
+      "startTime": "02:08",
+      "endTime": "15:08",
+      "numberOfSeats": 100,
+      "ticketCost": "5000",
+      "booked": 75,
+      "id": 1
     }
   ]
 }

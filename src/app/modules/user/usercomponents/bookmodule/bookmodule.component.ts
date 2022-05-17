@@ -10,28 +10,32 @@ import { getItem, toast, TYPE } from 'src/app/utils/utils';
 })
 export class BookmoduleComponent implements OnInit {
   name = ''
-  constructor( public dialogRef: MatDialogRef<BookmoduleComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,private http:HttpClient) { }
+  constructor(public dialogRef: MatDialogRef<BookmoduleComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
 
 
-  Submit(){
+  Submit() {
     let user = getItem('auth')
-    this.http.get("http://localhost:3000/register/"+user.userId).subscribe((res:any)=>{
-      if(res){
-       res.tickets.push({
+    this.http.get("http://localhost:3000/register/" + user.userId).subscribe((res: any) => {
+      if (res) {
+        let seatNo = this.data.booked - 1
+        console.log(seatNo)
+        res.tickets.push({
+          id: res.tickets.length,
           name: this.name,
           source: this.data.source,
           destination: this.data.destination,
           date: this.data.dispatcheddate,
-          seat: (this.data.booked + 1) - this.data.booked,
+          seat: seatNo + 'A',
+          flightName: this.data.flightName
         })
-        this.http.put("http://localhost:3000/register/"+user.userId,res).subscribe(val=>{
-          toast(TYPE.SUCCESS,false,"Ticket Booked Successfully")
+        this.http.put("http://localhost:3000/register/" + user.userId, res).subscribe(val => {
+          toast(TYPE.SUCCESS, false, "Ticket Booked Successfully")
           this.data.booked = this.data.booked - 1
-          this.http.put("http://localhost:3000/schedule/"+ this.data.id,this.data).subscribe(value=>{
+          this.http.put("http://localhost:3000/schedule/" + this.data.id, this.data).subscribe(value => {
             console.log(value)
           })
           this.dialogRef.close()

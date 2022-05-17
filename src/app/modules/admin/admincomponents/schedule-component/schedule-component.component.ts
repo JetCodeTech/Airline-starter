@@ -28,7 +28,7 @@ export class ScheduleComponentComponent implements OnInit {
 
 
   ELEMENT_DATA: PeriodicElement[] = [];
-  displayedColumns: string[] = ['No', 'flightName', 'Source', 'Destination', 'Flight Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price', 'Actions'];
+  displayedColumns: string[] = ['No', 'Flight Name', 'Source', 'Destination', 'Flight Date', 'Start Time', 'End Time', 'Number Of Seats', 'Ticket Price', 'Actions'];
   dataSource = this.ELEMENT_DATA;
 
 

@@ -4,7 +4,7 @@
   <a
     mat-button
     *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 2"
-    routerLink="searchflights"
+    routerLink="/user/search-flights"
     >Search Flight</a
   >
   <a
@@ -14,15 +14,21 @@
     >My Tickets</a
   >
 
-  <a mat-button  *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1" routerLink="/admin/schedule"
-  >Schedule</a
->
+  <a
+    mat-button
+    *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1"
+    routerLink="/admin/schedule"
+    >Schedule</a
+  >
   <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="login"
     >Login</a
   >
-  <a mat-button  *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1" routerLink="admin/flight-dashboard"
-  >Flight</a
->
+  <a
+    mat-button
+    *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1"
+    routerLink="admin/flight-dashboard"
+    >Flight</a
+  >
   <a
     mat-button
     *ngIf="(auth.isLoggedIn | async) == true && (auth.userRole | async) == 1"
@@ -35,8 +41,4 @@
   <a mat-button *ngIf="(auth.isLoggedIn | async) == false" routerLink="register"
     >Register</a
   >
- 
-
-
-
 </mat-toolbar>

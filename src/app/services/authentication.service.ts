@@ -9,11 +9,13 @@ export class AuthenticationService {
 
     isLoggedIn = new BehaviorSubject<Boolean>(false);
     userRole = new BehaviorSubject<Number>(0);
+    userId = new BehaviorSubject<Number>(0);
 
     constructor(private httpClient: HttpClient) {
         let userRole = getItem('auth');
         if (userRole && userRole.role && userRole.userValid) {
             this.userRole.next(Number(userRole.role))
+            this.userId.next(Number(userRole.userId))
             this.isLoggedIn.next(true)
         }
 

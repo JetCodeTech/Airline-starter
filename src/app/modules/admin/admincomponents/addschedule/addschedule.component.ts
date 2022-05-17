@@ -20,6 +20,8 @@ export class AddscheduleComponent implements OnInit {
 
   airline: Airline | undefined;
 
+  flights: any = [];
+
   constructor(private adminService: AdminService, private router: Router, private http: HttpClient) {
     this.addscheduleForm = new FormGroup({
       source: new FormControl("", [
@@ -52,6 +54,7 @@ export class AddscheduleComponent implements OnInit {
       booked: new FormControl(0)
     })
     this.airline = this.adminService.airlineForScheduling;
+    this.getFlights()
   }
 
   ngOnInit(): void {
@@ -67,5 +70,12 @@ export class AddscheduleComponent implements OnInit {
       }
     })
     this.addscheduleForm.reset();
+  }
+
+  getFlights() {
+    this.http.get("http://localhost:3000/addFlight").subscribe((res: any) => {
+      console.log(res, 'tee')
+      this.flights = res;
+    })
   }
 }

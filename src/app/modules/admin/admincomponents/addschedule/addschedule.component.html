@@ -38,6 +38,15 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Flights</mat-label>
+          <mat-select formControlName="flightName">
+            <mat-option *ngFor="let food of flights" [value]="food.name">
+              {{ food.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Start time </mat-label>
           <input
             matInput
