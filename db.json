@@ -12,52 +12,45 @@
     {
       "email": "user@gmail.com",
       "password": "user",
-      "fName": "user ",
+      "fName": "user",
       "lName": "one",
       "role": 2,
-      "id": 2,
-      "tickets": [
-        {
-          "id": 1,
-          "name": "dsd",
-          "source": "Chennai",
-          "destination": "Malaysia",
-          "date": "2022-05-19",
-          "seat": "75A",
-          "flightName": "air"
-        }
-      ]
-    },
-    {
-      "email": "admin2@gmail.com",
-      "password": "admin",
-      "fName": "admin ",
-      "lName": "2",
-      "role": 1,
-      "id": 3,
-      "tickets": []
+      "id": 2
     }
   ],
   "addFlight": [
     {
-      "name": "air",
-      "contact": "3456",
-      "id": 3
+      "name": "Air India",
+      "contact": "86786",
+      "id": 1
     }
   ],
   "schedule": [
     {
       "source": "Chennai",
-      "destination": "Malaysia",
-      "dispatcheddate": "2022-05-19",
-      "arraiveddate": "2022-05-24",
-      "flightName": "air",
-      "startTime": "02:08",
-      "endTime": "15:08",
+      "destination": "Bangalore",
+      "dispatcheddate": "2022-05-18",
+      "arraiveddate": "2022-05-26",
+      "flightName": "Air India",
+      "startTime": "04:52",
+      "endTime": "16:54",
       "numberOfSeats": 100,
-      "ticketCost": "5000",
-      "booked": 75,
+      "ticketCost": "1500",
+      "booked": 100,
       "id": 1
+    },
+    {
+      "source": "goa",
+      "destination": "delhi",
+      "dispatcheddate": "2022-05-12",
+      "arraiveddate": "2022-05-30",
+      "flightName": "Air India",
+      "startTime": "16:54",
+      "endTime": "04:54",
+      "numberOfSeats": 100,
+      "ticketCost": "2000",
+      "booked": 100,
+      "id": 2
     }
   ]
 }

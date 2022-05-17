@@ -22,10 +22,10 @@ export class SearchflightsComponent implements OnInit {
   searchflights!: FormGroup
   constructor(private fb: FormBuilder, private http: HttpClient, public dialog: MatDialog) {
     this.searchflights = this.fb.group({
-      source: new FormControl("", [Validators.required]),
-      destination: new FormControl("", [Validators.required]),
-      fdate: new FormControl("", [Validators.required]),
-      rdate: new FormControl("", [Validators.required])
+      source: new FormControl(""),
+      destination: new FormControl(""),
+      fdate: new FormControl(""),
+      rdate: new FormControl("")
     })
   }
 
@@ -46,11 +46,12 @@ export class SearchflightsComponent implements OnInit {
 
 
   searchData() {
-    console.log(this.dataSource, "source");
-
-    this.dataSource = this.dataSource.map((res: any) => {
-      if (res.dispatcheddate == this.searchflights.value.fdate || res.arraiveddate == this.searchflights.value.fdate || res.source.toLowerCase().includes(this.searchflights.value.source.toLowerCase()) || res.destination.toLowerCase().includes(this.searchflights.value.destination.toLowerCase())) {
+    this.searchedData = []
+    this.searchedData = this.dataSource.map((res: any) => {
+      if ((this.searchflights.value.source.toLowerCase().length && res.source.toLowerCase().includes(this.searchflights.value.source.toLowerCase())) || (this.searchflights.value.destination.toLowerCase().length && res.destination.toLowerCase().includes(this.searchflights.value.destination.toLowerCase())) || (this.searchflights.value.fdate.length && res.dispatcheddate == this.searchflights.value.fdate) || (this.searchflights.value.rdate.length && res.arraiveddate == this.searchflights.value.rdate)) {
         return res
+      } else {
+        return {}
       }
     })
     console.log(this.dataSource)
@@ -65,7 +66,7 @@ export class SearchflightsComponent implements OnInit {
   getData() {
     this.http.get(" http://localhost:3000/schedule").subscribe((res: any) => {
       this.dataSource = res
-      console.log(this.dataSource, "vallll");
+      this.searchedData = res
 
       // this.dataSource =  this.searchflights.value;
     })
